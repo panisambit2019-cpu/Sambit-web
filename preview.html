@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sambit Pani | Personal Page</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:white;
+text-align:center;
+overflow-x:hidden;
+}
+
+/* Name Intro */
+#name{
+font-size:60px;
+margin-top:100px;
+cursor:pointer;
+transition:0.4s;
+color:#ffd700;
+}
+
+#name:hover{
+transform:scale(1.1);
+}
+
+/* Welcome Board */
+#welcomeBoard{
+display:none;
+margin-top:30px;
+animation:fade 1.5s;
+}
+
+@keyframes fade{
+from{opacity:0; transform:translateY(30px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+/* Menu buttons */
+.menu button{
+margin:10px;
+padding:12px 25px;
+border:none;
+border-radius:25px;
+background:#ffd700;
+color:black;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+.menu button:hover{
+background:white;
+transform:scale(1.1);
+}
+
+/* info display */
+#info{
+margin-top:20px;
+font-size:20px;
+color:#90ee90;
+}
+
+/* Chat box */
+.chatbox{
+width:300px;
+margin:30px auto;
+background:white;
+color:black;
+border-radius:10px;
+padding:10px;
+}
+
+#messages{
+height:150px;
+overflow-y:auto;
+border:1px solid #ccc;
+margin-bottom:10px;
+padding:5px;
+}
+
+input{
+padding:8px;
+width:70%;
+}
+
+.sendBtn{
+padding:8px;
+background:#2c5364;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+/* Footer */
+footer{
+margin-top:50px;
+font-size:14px;
+color:#ccc;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1 id="name" onclick="openBoard()">Sambit Pani</h1>
+
+<div id="welcomeBoard">
+
+<h2>🙏 Welcome To My Personal Business ID Page 🙏</h2>
+<p>Thank you for visiting 🙂</p>
+
+<div class="menu">
+<button onclick="showContact()">Contact No.</button>
+<button onclick="showMail()">Email</button>
+<button onclick="showHobby()">Hobby</button>
+<button onclick="showDesignation()">Designation</button>
+</div>
+
+<div id="info"></div>
+
+<!-- Chat Section -->
+<div class="chatbox">
+<h3>Open Chat</h3>
+
+<div id="messages"></div>
+
+<input id="chatInput" placeholder="Type message..." />
+<button class="sendBtn" onclick="sendMsg()">Send</button>
+
+</div>
+
+</div>
+
+<footer>
+© All Rights Reserved 2026-2030 | Sambit Pani Business ID
+</footer>
+
+<script>
+
+function openBoard(){
+document.getElementById("welcomeBoard").style.display="block";
+}
+
+function showContact(){
+document.getElementById("info").innerHTML="📞 Contact Number: 7735280765";
+}
+
+function showMail(){
+document.getElementById("info").innerHTML="📧 Email: sambitpani2019@gmail.com";
+}
+
+function showHobby(){
+document.getElementById("info").innerHTML="✨ Hobby: Work is God";
+}
+
+function showDesignation(){
+document.getElementById("info").innerHTML="💼 Designation: Updating Soon...";
+}
+
+function sendMsg(){
+let input=document.getElementById("chatInput");
+let msg=input.value;
+
+if(msg!=""){
+let box=document.getElementById("messages");
+box.innerHTML+="<div>Visitor: "+msg+"</div>";
+input.value="";
+box.scrollTop=box.scrollHeight;
+}
+}
+
+</script>
+
+</body>
+</html>
